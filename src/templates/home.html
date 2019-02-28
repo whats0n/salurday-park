@@ -1,0 +1,61 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<div class="inner">
+		{% for item in [
+			{
+				img: 'cloud_top',
+				position: 'top'
+			},
+			{
+				img: 'cloud_middle',
+				position: 'middle'
+			},
+			{
+				img: 'cloud_bottom',
+				position: 'bottom'
+			}
+		] %}
+			<img src="img/{{item.img}}.png" alt="cloud" class="cloud cloud_{{item.position}}">
+		{% endfor %}
+		<header class="header">
+			<div class="header__logo">
+				<img src="img/logo.png" alt="salurday park" class="header__img">
+			</div>
+		</header>
+		<div class="section">
+			<div class="figure">
+				<img src="img/kid.png" alt="kid" class="figure__main">
+				<img src="img/decor_bottom.png" alt="lines" class="figure__decor figure__decor_bottom">
+				<img src="img/decor_top.png" alt="lines" class="figure__decor figure__decor_top">
+			</div>
+			<div class="info">
+				<div class="info__title">Coolness is Coming</div>
+				<div class="info__description">
+					<p>This summer, we’re taking awesome kids’ decor to the next level-and you’re invited.</p>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__info">
+				<div class="footer__label">Subscribe to Saturday Park</div>
+				<div class="footer__title">Stay Up to Date With Deals and Awesome Insights</div>
+			</div>
+			<div class="footer__form">
+				<form action="POST" class="form">
+					<div class="form__field">
+						<input type="text" class="input" placeholder="Email Address">
+					</div>
+					<div class="form__control">
+						<button class="btn form__btn">Sign Up Now</button>
+					</div>
+				</form>
+			</div>
+		</footer>
+	</div>
+
+{% endblock %}
